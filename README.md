@@ -1,22 +1,13 @@
-[![](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/wild-flame)
+[![](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/Snoopyjoy)
 
-# jekyll-simple
+# 个人技术bog
 
-## simple
-simple is a theme designed for blogger using static site generator like jekyll, Hexo etc.
+## 简述
+工作中、学习中的一些问题和感悟。
 
-Especially for those who writes in both Chinese and English. The font-type setting looks really good when writers use Chinese mixed with English.
-
-Supposedly, this could work with Japanese as well but never had a chance to try.
-
-## Story behind this theme
-
-It has been long that using font with Chinese in web was a tedious and time-consuming work. It would be almost impossible to make different OS or devices to look the same.
-
-iOS 9 has pulished some new fonts in Chinese and I decided to make one theme that looks good on iOS devices, at the same time, making it acceptable on computers using other fonts.
-
-So mobile goes first, then the macOS.
+## 运行
+[安装 Jekyll](https://www.jekyll.com.cn/docs/installation/) 后执行jekyll serve命令
 
 ## ^-^
 
-You can click the button [Say Thanks!](https://saythanks.io/to/wild-flame) at the first of README if you use/like my project. :D
+You can click the button [Say Thanks!](https://saythanks.io/to/Snoopyjoy) at the first of README if you use/like my project. :D
