@@ -39,6 +39,6 @@ Node.js使用Express路由实现：
     });
     module.exports = router;
 ```
-测试链接 `http://www.hxl2lgy.top/jump` 在微信中打开试试吧。
+[测试链接](http://www.hxl2lgy.top/jump) `http://www.hxl2lgy.top/jump` 在微信中打开试试吧。
 
 IOS中还没仔细研究，最无奈的解决方案就是加图层引导用户点击右上角使用默认浏览器打开了。
