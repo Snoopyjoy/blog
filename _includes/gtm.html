@@ -1,0 +1,17 @@
+{% if site.gitman_client_id %}
+
+  <div id="gitmentContainer"></div>
+  <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+  <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script type="text/javascript">
+    var gitment = new Gitment({
+      owner: '{{site.github_username}}',
+      repo: 'blog',
+      oauth: {
+        client_id: '{{site.gitman_client_id}}',
+        client_secret: '{{site.gitman_client_secret}}'
+      },
+    });
+    gitment.render('gitmentContainer');
+  </script>
+{% endif %}

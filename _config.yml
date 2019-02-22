@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   工作学习中的心得记录。
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "http://hxl2lgy.top" # the base hostname & protocol for your site
-twitter_username: Shawn He
+twitter_username: ShawnHe1
 github_username: Snoopyjoy
 
 # Build settings
@@ -24,6 +24,8 @@ kramdown:
 # just leave someone empty to disable it
 # google_analytics:
 disqus_shortname: gitblog-6
+gitman_client_id: 1648bd782d5ebaf37b40
+gitman_client_secret: dbf2d19c7f4d59ef2b8142895fb330f5c2600382
 
 # used this for post_excerpt at index_page
 excerpt_separator: <!--description-->
