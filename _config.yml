@@ -25,6 +25,7 @@ kramdown:
 google_analytics: UA-135024177-1
 baidu_analytics: e1a602785c1e8ae7827b228c6a55c360
 disqus_shortname: gitblog-6
+keywords: node.js,redis,全栈开发,技术博客
 gitman:
   client_id: 1648bd782d5ebaf37b40
   client_secret: dbf2d19c7f4d59ef2b8142895fb330f5c2600382
