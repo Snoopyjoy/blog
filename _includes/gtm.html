@@ -1,13 +1,13 @@
-{% if site.gitman_client_id %}
+{% if site.gitman %}
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 <div id="gitalk-container"></div>     <script type="text/javascript">
   var gitalk = new Gitalk({
 
     // gitalk的主要参数
-    clientID: '{{site.gitman_client_id}}',
-    clientSecret: '{{site.gitman_client_secret}}',
-    repo: 'blog',
+    clientID: '{{site.gitman.client_id}}',
+    clientSecret: '{{site.gitman.client_secret}}',
+    repo: '{{site.gitman.client_repo}}',
     owner: '{{site.github_username}}',
     admin: ['{{site.github_username}}'],
     id:window.location.pathname,
