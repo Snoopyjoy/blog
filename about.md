@@ -4,8 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is a simple Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/).  Plus, you can find a lot of themes at [jekyllthemes.org](http://jekyllthemes.org/)
+&#160; &#160; &#160; &#160; 这是一个技术博客，主要分享一些工作学习中的感悟，趟过的坑。  
 
-You can find the source code for this theme at: <data data-icon="ei-sc-github"></data>  [jekyll-simple](https://github.com/wild-flame/jekyll-simple)
+&#160; &#160; &#160; &#160; 博主的github: <data data-icon="ei-sc-github"></data>  [Snoopyjoy](https://github.com/Snoopyjoy)
 
-You can find the source code for Jekyll at <data data-icon="ei-sc-github"></data>  [jekyll](https://github.com/jekyll/jekyll)
+&#160; &#160; &#160; &#160; 博客使用了wild-flame的jekyll-simple主题: <data data-icon="ei-sc-github"></data>  [jekyll-simple](https://github.com/wild-flame/jekyll-simple)
+
+&#160; &#160; &#160; &#160; Jekll 源码: <data data-icon="ei-sc-github"></data>  [jekyll](https://github.com/jekyll/jekyll)

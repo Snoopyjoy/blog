@@ -2,7 +2,7 @@
 layout: post
 title:  "Redis的keys命令被禁用的思考"
 date: 2019-02-21 16:43:26 +0800
-categories: node.js
+categories: 编程实践
 keywords: redis,keys命令,redis性能
 ---
 &#160; &#160; &#160; &#160; 为了删除某个特定前缀的数据，我在项目里用keys模糊匹配来获取需要删除的key，测试服跑的好好的，可是部署正式服的时候就报错了。后来追踪报错信息原来时腾讯云Redis集群禁用了keys这个命令。
