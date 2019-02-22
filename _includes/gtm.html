@@ -1,17 +1,18 @@
 {% if site.gitman_client_id %}
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>     <script type="text/javascript">
+  var gitalk = new Gitalk({
 
-  <div id="gitmentContainer"></div>
-  <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-  <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-  <script type="text/javascript">
-    var gitment = new Gitment({
-      owner: '{{site.github_username}}',
-      repo: 'blog',
-      oauth: {
-        client_id: '{{site.gitman_client_id}}',
-        client_secret: '{{site.gitman_client_secret}}'
-      },
-    });
-    gitment.render('gitmentContainer');
-  </script>
+    // gitalk的主要参数
+    clientID: '{{site.gitman_client_id}}',
+    clientSecret: '{{site.gitman_client_secret}}',
+    repo: 'blog',
+    owner: '{{site.github_username}}',
+    admin: ['{{site.github_username}}'],
+    id:window.location.pathname,
+
+  });
+  gitalk.render('gitalk-container');
+</script>
 {% endif %}
