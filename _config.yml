@@ -23,7 +23,7 @@ kramdown:
 # Third-party services
 # just leave someone empty to disable it
 google_analytics: UA-135024177-1
-baidu_analytics: e1a602785c1e8ae7827b228c6a55c360
+baidu_analytics: 38eb0a2f579657f5786a11f5e7300c50
 disqus_shortname: gitblog-6
 keywords: node.js,redis,全栈开发,技术博客
 gitman:
