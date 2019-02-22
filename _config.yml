@@ -30,6 +30,6 @@ gitman:
   client_id: 1648bd782d5ebaf37b40
   client_secret: dbf2d19c7f4d59ef2b8142895fb330f5c2600382
   client_repo: blog
-
+mob: 2a2eda40eebf8
 # used this for post_excerpt at index_page
 excerpt_separator: 一个node.js全栈开发工程师的心路历程

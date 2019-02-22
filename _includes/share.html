@@ -1,11 +1,16 @@
-<section class="share">
-  <a class="share-link" href="" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-    Twitter
-  </a>
-  <a class="share-link" href="" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-    Facebook
-  </a>
-  <a class="share-link" href="" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530'); return false;">
-    Google+
-  </a> 
-</section>
+{% if site.mob %}
+<div class="-mob-share-ui-button -mob-share-open">分享</div>
+<div class="-mob-share-ui -mob-share-ui-theme -mob-share-ui-theme-slide-bottom" style="display: none">
+  <ul class="-mob-share-list">
+    <li class="-mob-share-weixin"><p>微信</p></li>
+    <li class="-mob-share-twitter"><p>Twitter</p></li>
+    <li class="-mob-share-linkedin"><p>Linkedin</p></li>
+    <li class="-mob-share-weibo"><p>新浪微博</p></li>
+    <li class="-mob-share-qq"><p>QQ好友</p></li>
+    <li class="-mob-share-facebook"><p>Facebook</p></li>
+  </ul>
+  <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey={{site.mob}}"></script>
+{% endif %}
