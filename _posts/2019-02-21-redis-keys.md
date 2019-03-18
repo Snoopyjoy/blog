@@ -1,18 +1,25 @@
 ---
 layout: post
-title:  "Redis的keys命令被禁用的思考"
+title:  "禁止使用Redis的keys命令"
 date: 2019-02-21 16:43:26 +0800
-categories: 编程实践
+categories: 技巧
 keywords: redis,keys命令,redis性能
+description: keys命令很强大，强大到Redis容不下它，因为它的消耗太大了。
 ---
-&#160; &#160; &#160; &#160; 为了删除某个特定前缀的数据，我在项目里用keys模糊匹配来获取需要删除的key，测试服跑的好好的，可是部署正式服的时候就报错了。后来追踪报错信息原来时腾讯云Redis集群禁用了keys这个命令。
+
+&#160; &#160; &#160; &#160; keys命令很强大，强大到Redis容不下它，因为它的消耗太大了。
+&#160; &#160; &#160; &#160; 为了管理某个特定前缀的数据，我在项目里用keys命令模糊匹配来获取需要key，测试环境没问题，可是部署正式服的时候就报错了。
 
 <!--description-->  
-&#160; &#160; &#160; &#160; 搜索之后才发现原来使用keys命令有这么严重的后果。虽然redis以快著称，但是架不住keys命令的遍历所有检查还需要模糊匹配的需求啊。之前做的小项目没有发觉，但是如果数据量够大整个redis会被keys命令阻塞，CPU飙升，妥妥的事故。
+&#160; &#160; &#160; &#160; 原来是腾讯云Redis集群禁用了keys这个命令。虽然redis很快，但是keys命令的会遍历所有键并且可以模糊匹配，
+这个开销随着数据量级的增长是越来越难以承受的。之前做的小项目没有发觉，但仔细想想如果数据量增长到一定量级，
+必定会导致redis被keys命令阻塞，CPU飙升，在依赖Redis。
   
-&#160; &#160; &#160; &#160; 不用keys有替代方法吗？1. 优化代码改用Set集合。2. 使用SCAN命令代替。
+&#160; &#160; &#160; &#160; 不用keys有替代方法吗？  
+1. 改用Set集合。  
+2. 使用SCAN命令代替。
 
-&#160; &#160; &#160; &#160; redis2.8之后就支持了SCAN命令，下面是代替keys命令的实现。
+&#160; &#160; &#160; &#160; 用Redis2.8支持SCAN的命令来实现。
 ```javascript
 exports.searchKeys = function( keyword ){
     return new Promise( async function( resolve, reject ){
@@ -20,7 +27,7 @@ exports.searchKeys = function( keyword ){
         let cursor = 0;          //游标
         try {
             do{
-                //redis客户端执行命令的实现 具体代码就不放了
+                //redis客户端执行命令
                 const result = await exports.do("SCAN" , [ cursor, "MATCH", keyword ] );
                 cursor = result[0];
                 const newKeys = result[1];

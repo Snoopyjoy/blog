@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: 小亮的碎碎念
+title: 小亮的博客
 email: hel13140302@126.com
 description: > # this means to ignore newlines until "baseurl:"
   工作学习中的心得记录。
@@ -14,6 +14,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://github.hxl2lgy.top" # the base hostname & protocol for your site
 twitter_username: ShawnHe1
 github_username: Snoopyjoy
+icp: 沪ICP备18001052号-1
 
 # Build settings
 markdown: kramdown
