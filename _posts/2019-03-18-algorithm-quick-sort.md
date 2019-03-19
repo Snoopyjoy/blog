@@ -16,7 +16,7 @@ keywords: 函数式,快速排序,Javascript
 ![]({{site.baseurl}}/assets/img/quick_sort.png)
     
 ### 快速排序的实现
-&#160; &#160; &#160; &#160;  根据快速排序的原理使用Javascript的实现:  
+&#160; &#160; &#160; &#160; 使用Javascript实现:  
 ```javascript
 const quickSort = (array) => {
   const sort = (arr, left = 0, right = arr.length - 1) => {
@@ -44,7 +44,7 @@ const quickSort = (array) => {
   return array;
 }
 ```
-&#160; &#160; &#160; &#160;  -_-!上面那段代码是不是感觉很难读懂，尤其是在将数组按基准值将元素放到左右两边的时候。更好理解的版本:  
+&#160; &#160; &#160; &#160;  这段代码是不是感觉很难读懂，尤其是在数组元素交换的过程。那么下面这个版本更好理解:  
 ```javascript
 const quickSort1 = function(arr) {
   if (arr.length <= 1) { //如果数组长度小于等于1无需继续分解
@@ -64,17 +64,24 @@ const quickSort1 = function(arr) {
   return quickSort1(left).concat([pivot], quickSort1(right));
 };
 ```
-&#160; &#160; &#160; &#160; 上述代码就清晰多了，这段代码很容易可以很清晰的展示快速排序的过程，不过也是有代价的，因为每次递归都创建了新的
+&#160; &#160; &#160; &#160; 上述代码就清晰多了，这段代码很清晰的展示了快速排序的过程，不过也是有代价的，因为每次递归都创建了新的
 数组，所以运行时内存的需求也就更大。  
-&#160; &#160; &#160; &#160; 下面是使用函数式编程工具库[Ramda](https://github.com/ramda/ramda)实现的快速排序：
+&#160; &#160; &#160; &#160; 使用ES6语法的实现：
+```javascript
+const quickSort2=([head,...tail])=> head===undefined ? []
+  : quickSort2(tail.filter(a=>a<head))
+    .concat(head)
+    .concat(quickSort2(tail.filter(a=>a>=head)));
+```
+&#160; &#160; &#160; &#160; 使用函数式编程工具库[Ramda](https://github.com/ramda/ramda)实现的快速排序：
 ```javascript
 const R = require('ramda');
 const quickSort3 = R.unless(        //直到返回空数组长度为1停止递归
   arr=>R.length(arr)<=1,
   ([pivot, ...rest]) => [
-    ...R.compose(quickSort3, R.filter(R.lt(R.__, pivot)))(rest),    //比基准值小的放到左边
+    ...R.compose(quickSort3, R.filter(R.lt(R.__, pivot)))(rest), //比基准值小的放到左边
     pivot,
-    ...R.compose(quickSort3, R.filter(R.gte(R.__, pivot)))(rest),   //大于等于基准值的放到右边
+    ...R.compose(quickSort3, R.filter(R.gte(R.__, pivot)))(rest), //大于等于基准值的放到右边
   ]
 );
 ```
@@ -83,10 +90,8 @@ const quickSort3 = R.unless(        //直到返回空数组长度为1停止递�
 ### 时间复杂度
 &#160; &#160; &#160; &#160; 平均状况下时间复杂度为O(n log(n)), 最坏情况下时间复杂度为O(n<sup>2</sup>)
 
-### 参考
-[https://zhuanlan.zhihu.com/p/30936617](https://zhuanlan.zhihu.com/p/30936617)
-[http://www.ruanyifeng.com/blog/2011/04/quicksort_in_javascript.html](http://www.ruanyifeng.com/blog/2011/04/quicksort_in_javascript.html)
-
-
-
-
+### 总结
+&#160; &#160; &#160; &#160; 快速排序是需要借助于递归来实现的，在函数为返回结果前前嵌套调用会在当前调用帧里再次嵌套调用帧，递归的不断嵌套
+会导致会导致堆栈溢出，当然这是要在数据量超大的情况下才会发生。针对递归堆栈溢出的解决办法就是使用尾递归优化，遗憾的是快速排序是无法使用尾递归的，
+因为快速排序在函数return时需要对左右两段序列进行递归排序再进行合并。上文所举实例中第一个算法的效率是最高的，其他几种写法只是为了方便理解快速
+排序。另外ramda是一个很好的函数式工具库，不过在最后一个例子中使用ramda实现的快速排序却是效率最低的，仅作参考。
