@@ -2,7 +2,7 @@
 layout: post
 title:  "微信跳转APP"
 date: 2019-02-21 16:43:26 +0800
-categories: 技巧
+categories: Tip
 keywords: 微信app唤起,微信跳转,微信宣传页
 description: 在APP推广时，我们通常需要发布一个推广页面，提供APP的下载且能够唤起APP。那么怎么才能通过这个页面在微信里唤起APP呢？
 ---
