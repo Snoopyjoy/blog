@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 算法-寻找最长回文子串Manacher算法
+title: 算法-寻找最长回文子串, Manacher算法
 date: 2019-04-07 21:05:00 +0800
 categories: Algorithm
 description: 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
