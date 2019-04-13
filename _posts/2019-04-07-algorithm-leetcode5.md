@@ -10,8 +10,9 @@ keywords: algorithm,leetcode,javascript,manacher
 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
 ### 解题
 首先什么是回文？回文就是对称的字符串，正读反读都一样。每个字符都要左右寻找是否对称。因此时间复杂度为O(n<sup>2</sup>)。
-题解中还提到了一种时间复杂度为O(n)的算法，马拉车算法Manacher‘s Algorithm。
-
+题解中还提到了一种时间复杂度为O(n)的算法，马拉车算法Manacher‘s Algorithm。  
+  
+首先中心对称算法的实现  
 ```javascript
 /**
  * @param {string} s
@@ -60,7 +61,7 @@ function findRoundStr( position, str ){
     };
 }
 ```
-Manacher算法实现
+Manacher算法实现  
 ```javascript
 /**
  * @param {string} s
