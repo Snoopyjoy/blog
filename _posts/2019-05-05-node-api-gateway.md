@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 读后点评《一个你控制的api网关服务》
+title: 读后点评《一个你掌控的api网关服务》
 category: Review 
 description: 原文《A Node.js API Gateway that you control》本文介绍了作为微服务架构中的重要一环，网关服务。
 keywords: Node.js API Gateway
