@@ -4,3 +4,5 @@ _site
 \.idea/
 _drafts
 \.vscode/
+.jekyll-cache
+.DS_Store
